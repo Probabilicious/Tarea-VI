@@ -1,0 +1,303 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[left=2cm, right=2cm, top=4.5cm, bottom=2cm]{geometry}
+
+\begin{document}
+	%Portada
+	\begin{titlepage}
+		\centering
+		{\scshape\LARGE Universidad Nacional Autónoma de México \par}
+		\vspace{1cm}
+		{\scshape\Large Probabilidad I\par}
+		\vspace{1.5cm}
+		{\huge\bfseries Tarea VI\par}
+		\vspace{.5cm}
+
+		{\Large\itshape Alan Ernesto Arteaga Vázquez \par}
+		 \vspace{.5cm}
+		{\Large\itshape Raúl Llamosas Alvarado \par}
+		 \vspace{.5cm}
+		{\Large\itshape Edgar Quiroz Castañeda \par}
+	    \vspace{.5cm}
+		{\Large\itshape Jean Paul Ruiz Melo\par}
+		\vspace{.5cm}
+		{\Large\itshape Sandra Del Mar Soto Corderi \par}
+
+		\vfill
+		 \includegraphics[width=0.3\textwidth]{escudo.png}
+		\vfill
+
+		{\large Martes 20 de noviembre del 2018 \par}
+	\end{titlepage}
+
+	\pagebreak
+	\setlength{\voffset}{-0.75in}
+	\setlength{\headsep}{5pt}
+
+	%Ejericios
+	\begin{enumerate}
+		%1
+		\item{
+			Sea $X\sim\text{Poisson}(\lambda)$, demuestre que
+                $$ F_X(n) = \frac{1}{n!}\int_{\lambda}^{\infty}e^{-x}x^n \; dx$$
+		}
+
+		%2
+		\item{
+			Suponga que en un grupo de probabilidad de 100 alumnos, el 85\% de
+            los alumnos reprobó el segundo examen parcial. Si tomamos una
+            muestra de tamaño 30. Calcule la probabilidad de
+            \begin{enumerate}
+                %a
+                \item {
+                Exactamente 10 alumnos de la muestra hayan reprobado.
+                }
+
+                %b
+                \item {
+                Al menos 5 alumnos de la muestra hayan reprobado.
+                }
+
+                %c
+                \item {
+                El número de alumnos reprobados de la muestra esté entre 5 y 10.
+                }
+            \end{enumerate}
+		}
+
+		%3
+		\item{
+            Una aseguradora tiene 10 pólizas independientes con una cobertura
+            de una año. El valor nominal de cada una de esas pólizas es de
+            \$1,000. La probabilidad de que haya una reclamación en el año en
+            consideración es de 0.1. Encueentre la probabilidad de que la
+            aseguradora pague más del total esperado para el año en
+            consideración.
+		}
+
+		%4
+		\item{
+			Una moneda es lanzada tantas veces como sea necesario hasta obtener
+            5 águilas. Si se sabe que en los primeros 8 lanzamientos no se ha
+            logrado el objetivo. Calcule la probabilidad de que se requieran, en
+            total, menos de 12 lanzamientos.
+		}
+
+		%5
+		\item{
+			Un dado balanceado es lanzado hasta que cae la cara con el "4". Si X
+            es el número de lanzamientos requeridos hasta obtener el primer "4".
+            ¿Cuál es el valor de $\epsilon$ más pequeño para el cual
+            $P(X \leq \epsilon) \geq 0.5$?
+		}
+
+		%6
+		\item{
+			En una tienda de abarrotes se venden 400 artículos, 6 de los cuales
+            no tienen marcada la clave de su precio. Si una persona entra a la
+            tienda y elige 10 artículos, calcule la probabilidad de que entre
+            los  artículos escogidos haya por lo menos un artículo que no tenga
+            marcada la cave de su precio.
+		}
+
+		%7
+		\item{
+			Supongamos que el 5\% de las personas mayores de 18 años tiene su
+            INE vencida. Utilice la aproximación Poisson para estimar la
+            probabilidad de que a lo más 3 de 50 personas mayores de 18 años,
+            seleccionadas al azar, tengan su INE vencida.
+		}
+
+		%8
+		\item{
+			\begin{enumerate}
+				%a
+				\item {
+					Encuentre la moda de la distribución gamma.
+				}
+
+				%b
+				\item {
+					Si $X \sim \text{exp}(\lambda)$, demuestre que
+                        $$ \mathbb{E}(X^k) = \frac{k!}{\lambda^k} $$
+				}
+
+			\end{enumerate}
+		}
+
+		%9
+		\item{
+			Sea X una variable aleatoria continua con función de distribución F.
+            Defínase Y una variable aleatoria tal que $Y = F(X)$. Demuestre que
+            $Y \sim \text{Unif}(0,1)$.
+		}
+
+		%10
+		\item{
+			Conteste las siguientes preguntas respecto a la distribución normal.
+			\begin{enumerate}
+				%a
+				\item {
+					Demuestre que la función de densidad $N(\mu, \sigma^2)$ es
+                    simétrica con respecto a $x = \mu$, alcanza su máximo en
+                    $x = \mu$ y tiene puntos de inflexión en $x_1= \mu + \sigma$
+                    y $x_2 = \mu - \sigma$.
+				}
+
+				%b
+				\item {
+					Si X es una variable aleatoria con distribución normal con
+                    parámetros $\mu = 10$ y $\sigma^2 = 36$.\\
+                    Calcule: $\mathbb{P}(X > 5)$, $\mathbb{P}(4 < X < 10)$,
+                    $\mathbb{P}(X < 8)$, $\mathbb{P}(X < 20)$ y
+                    $\mathbb{P}(X > 16)$.
+				}
+
+				%c
+				\item {
+					Suponga que $X$ es una variable aleatoria con media y
+					varianza igual a 20- ¿Qué se puede decir de
+					$\mathbb{P}(0 \leq X \leq 40)$?
+				}
+
+				%d
+				\item {
+					Sea $X$ una variable aleatoria con distribución normal con
+					media 12 y varianza 4. Encontrar el valor de $\tau$ tal que
+					$\mathbb{P}(X < \tau) \in \{0,1\}$.
+				}
+
+				%e
+				\item {
+					Si $X$ tiene una distribución normal con media $\mu = 9$ y
+					varianza $\sigma^2 = 4$, encontrar \\
+					$\mathbb{P}(X^2 - 2X \leq 8)$
+				}
+			\end{enumerate}
+		}
+
+		%11
+		\item{
+			Sea $X$ una variable aleatoria con distribución uniforme en el
+			intervalo $(-\frac{\pi}{2}, \frac{\pi}{2})$. Encuentre la función de
+			distribución y la función de densidad $Y = \tan(X)$.
+		}
+
+		%12
+		\item{
+			Si $X \sim \text{Unif}(0, 10)$, calcular
+			$\mathbb{P}(X + \frac{10}{X} > 7)$
+		}
+
+		%13
+		\item{
+			Un aparato mide y graba de manera continua la actividad sísmica de
+			una región remota. El tiempo, $T$, de falla del aparato se
+			distribuye exponencial con media de 3 años. Debido a que el aparato
+			no será monitoreado durante sus dos primeros años de servicio, el
+			tiempo para descubrir una falla es $X = \text{máx}\{T,2\}$.
+			Encuentre $\mathbb{E}(X)$.
+		}
+
+		%14
+		\item{
+			Demuestre que si $X \sim \text{Hipergeométrica}(N,m,n)$, entonces.
+				$$ \sum_{x = 0}^{n}f_X(x) = 1$$
+		}
+
+		%15
+		\item{
+			Sea $X$ una variable aleatoria con distribución binomial con
+			parámetros n y p. Demuestre
+			\begin{enumerate}
+				%a
+				\item {
+					$\mathbb{P}(X = x + 1) = \frac{p}{1 - p} \frac{n - x}{x + 1}
+					 \mathbb{P}(X = x)$
+				}
+
+				%b
+				\item {
+					$\mathbb{P}(X \in \{ 1,3,5,...\}) = \frac{1}{2}
+					 (1 - (1 - 2p)^2)$
+				}
+
+				%c
+				\item {
+					$\mathbb{P}(X \in \{ 0,2,4,...\}) = \frac{1}{2}
+					 (1 + (1 - 2p)^2)$
+				}
+			\end{enumerate}
+		}
+
+		%16
+		\item{
+		Sea $X$ una variable aleatoria con distribución Poisson con parámetro
+		$\lambda$. Demuestre
+			\begin{enumerate}
+				%a
+				\item {
+					$\mathbb{P}(X = x + 1) = \frac{\lambda}{x + 1}
+					 \mathbb{P}(X = x)$
+				}
+
+				%b
+				\item {
+					$\mathbb{P}(X \in \{ 1,3,5,...\}) = \frac{1}{2}
+					 (1 - e^{-2\lambda})$
+				}
+
+				%c
+				\item {
+					$\mathbb{P}(X \in \{ 0,2,4,...\}) = \frac{1}{2}
+					 (1 + e^{-2\lambda})$
+				}
+			\end{enumerate}
+		}
+
+		%17
+		\item{
+			Si $X \sim \text{Poisson}(\lambda)$, y además $\mathbb{P}(X \leq 1)
+			= 2\mathbb{P}(X = 2)$
+		}
+
+		%18
+		\item{
+			Si $X$ es una variable aleatoria con distribución Poisson tal que
+			$\mathbb{P}(X = 0) = \mathbb{P}(X = 1)$, encuentre $\mathbb{E}(X)$.
+		}
+
+		%19
+		\item{
+			Un componente con tiempo de vida que se distribuye exponencialmente
+			con una tasa de falla de 1 por 24 horas se pone en servicio con un
+			componente de reemplazo del mismo tipo que se sustituye por el
+			primero cuando falla. ¿Cuál es la mediana del tiempo total hasta la
+			falla de ambos componentes?
+		}
+
+		%20
+		\item{
+			Sea $U$ una variable aleatoria con distribución uniforme continua
+			con parámetros 0,1. Se define a $X = a+(b - a)U$.Encuentre
+			\begin{enumerate}
+				%a
+				\item {
+					$\mathbb{E}(X)$
+				}
+
+				%b
+				\item {
+					$\text{Var}(X)$
+				}
+			\end{enumerate}
+
+		}
+
+	\end{enumerate}
+\end{document}
