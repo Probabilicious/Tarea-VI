@@ -178,7 +178,22 @@
 			Un dado balanceado es lanzado hasta que cae la cara con el "4". Si X
             es el número de lanzamientos requeridos hasta obtener el primer "4".
             ¿Cuál es el valor de $\epsilon$ más pequeño para el cual
-            $P(X \leq \epsilon) \geq 0.5$?
+            $P(X \leq \epsilon) \geq 0.5$?\\
+            Tenemos que éste problema describe una variable aleatoria con distribución geométrica. La cual está dada por:
+            $$p(i)=p(1-p)^{i-1}: i\in \lbrace 1,2,... \rbrace $$
+            Que un dado caiga con una cara "x" tiene probabilidad de $\frac{1}{6}$ entonces en éste caso $p=\frac{1}{6}$, $1-p=\frac{5}{6}$. Tenemos que $P(X\leq \epsilon) $ es una función de distribución de una variable discreta que está dada por:
+            $$P(X\leq \epsilon)=F(\epsilon)=\sum_{i=0}^{\epsilon}p(i)=\sum_{i=0}^{\epsilon}(\frac{1}{6})(\frac{5}{6})^{i-1}=\sum_{i=0}^{\epsilon}(\frac{5^{i-1}}{6^{i}})=\frac{1}{5}\sum_{i=0}^{\epsilon}(\frac{5}{6})^{i}=\frac{1}{5}(\frac{(\frac{5}{6})^{\epsilon+1}-1}{\frac{5}{6}-1})$$ Y esto es mayor a $\frac{1}{2}$ cuando:
+            $$\frac{1}{5}(\frac{(\frac{5}{6})^{\epsilon+1}-1}{-\frac{1}{6}})\geq \frac{1}{2}\Leftrightarrow \frac{1}{5}((\frac{5}{6})^{\epsilon+1}-1)\leq -\frac{1}{12}$$
+            $$(\frac{5}{6})^{\epsilon+1}\leq -\frac{5}{12}+1=\frac{7}{12}$$
+            $$(\frac{5}{6})^{\epsilon+1}\leq \frac{7}{12}$$
+            
+            Tenemos que la igualdad se da cuando:
+            $$(\frac{5}{6})^{\epsilon+1}=\frac{7}{12}\Leftrightarrow log_{\frac{5}{6}}(\frac{7}{12})=\epsilon+1 \Leftrightarrow \epsilon=log_{\frac{5}{6}}(\frac{7}{12})-1
+            $$
+            Por propiedades de logaritmo esto es igual a:
+            $$\epsilon=log_{\frac{5}{6}}(\frac{7}{12})-1=log_{\frac{5}{6}}(7)-log_{\frac{5}{6}}(12)-1=\frac{ln(7)-ln(12)-ln(\frac{5}{6})}{ln(\frac{5}{6})}=\frac{ln(7)-ln(2)-ln(5)}{ln(5)-ln(2)-ln(3)}$$
+            Por desigualdades de logaritmo. Se sigue entonces que:
+            $$(\frac{5}{6})^{\epsilon+1}\leq \frac{7}{12}\Leftrightarrow e\geq \frac{ln(7)-ln(2)-ln(5)}{ln(5)-ln(2)-ln(3)}_{\blacksquare}$$
 		}
 
 		%6
@@ -188,6 +203,12 @@
             tienda y elige 10 artículos, calcule la probabilidad de que entre
             los  artículos escogidos haya por lo menos un artículo que no tenga
             marcada la cave de su precio.
+            \\
+            Usamos la distribución hipergeométrica. Tenemos entonces que ésta está dada por:
+            $$p(i)=\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}}$$
+            Y se tiene que en éste caso N=400,n=10,m=6,i=1. Entonces se sigue que:
+            
+            $$p(1)=\frac{\binom{6}{1}\binom{400-6}{10-1}}{\binom{400}{10}}\approx 0.1337 $$
 		}
 
 		%7
@@ -195,7 +216,11 @@
 			Supongamos que el 5\% de las personas mayores de 18 años tiene su
             INE vencida. Utilice la aproximación Poisson para estimar la
             probabilidad de que a lo más 3 de 50 personas mayores de 18 años,
-            seleccionadas al azar, tengan su INE vencida.
+            seleccionadas al azar, tengan su INE vencida.\\
+            La probabilidad de Poisson dice que:
+            $$P\lbrace X=i \rbrace = e^{-\lambda} \frac{\lambda^{i}}{i!}$$
+            Tenemos que 3 de 50 personas da una relación de $\frac{3}{50}=0.06 \rightarrow 6\%$. 5 de cada 100 personas mayores a 18 años tienen su INE vencida entonces $\lambda=5$. Entonces la probabilidad de que 6 de cada 100 tenga su INE vencida está dada por
+            $$P(6 \ INE \ vencidas \ cada \ 100)=\frac{\lambda^{k}e^{-\lambda}}{k!}=\frac{5^{6}e^{-6}}{6!}=\frac{15625}{e^{6} 6!}\approx 0.05379$$
 		}
 
 		%8
@@ -204,12 +229,33 @@
 				%a
 				\item {
 					Encuentre la moda de la distribución gamma.
+					
+				
+				Tenemos que la función de distribución gamma con parámetros $\lambda$ y $\omega$ está dada por 
+				$$f(x)=\frac{\lambda e^{-\lambda x}(\lambda x)^{\omega-1}}{\Gamma(\omega)}=\frac{\lambda e^{-\lambda x}(\lambda x)^{\omega -1}}{\int_{0}^{\infty}e^{-x}x^{\omega -1}dx}$$ Y la moda se define como el valor $x_{m}$ tal que $$f'(x_{m})=0$$
+				Es decir cuando alcance un máximo. Hagamos la siguiente afirmación:\\
+				\textbf{Afirmación:} $\Gamma(\omega)=(\omega-1)!$ \\
+				\textit{Demostración:} Tomemos como caso base $\Gamma(1)$ tenemos que $$\Gamma(1)=\int_{0}^{\infty}e^{-x}x^{1-1}dx=\int_{0}^{\infty}e^{-x}dx=[-e^{-x}]_{0}^{\infty}=\lim_{x\rightarrow \infty}(-e^{-x})+e^{-0}=1$$ 
+				Ahora supongamos que para $n$ se cumple $\Gamma(n)=(n-1)!$. Demostremos que para $\Gamma(n+1)$ se cumple que $\Gamma(n+1)=n!$. Tenemos que: $$\Gamma(n+1)=\int_{0}^{\infty}e^{-x}x^{n+1-1}dx=\int_{0}^{\infty}e^{-x}x^{n}dx$$ Utilizando integración por partes uno puede ver que es igual a $$=[-x^{n}e^{-x}]_{0}^{\infty}+\int_{0}^{\infty}n  x^{n-1}e^{-x}dx=\lim_{x\rightarrow \infty}(-x^n e^{-x})-(-0^{n} e^{-0})+n\int_{0}^{\infty}x^{n-1}e^{-x}dx$$ $$=n\int_{0}^{\infty}x^{n-1}e^{-x}dx=n\Gamma(n)$$
+				Y esto resulta de conocer previamente que $\lim_{x \rightarrow \infty}(-x^{n}e^{-x})=0$. Además, como por hipótesis de inducción tenemos que $\Gamma(n)=(n-1)!$ se sigue que $$n\Gamma(n)=n(n-1)!=n!_{\blacktriangle}$$ Entonces, tenemos que $$f(x)=\frac{\lambda e^{-\lambda x}(\lambda x)^{\omega-1}}{(\omega-1)!}=\frac{(\lambda)^{\omega}e^{-\lambda x}x^{\omega-1}}{(\omega-1)!}=\frac{\lambda^{\omega}}{(\omega-1)!}(e^{-\lambda x}x^{\omega-1})$$ Tenemos entonces que la derivada estará dada por $$f'(x)=(\frac{\lambda^{\omega}}{(\omega-1)!}) (-\lambda e^{-\lambda x}x^{\omega-1}+(\omega-1)x^{\omega-2}e^{-\lambda x})$$ Y se hace cero cuando $$ -\lambda e^{-\lambda x}x^{\omega-1}+(\omega-1)x^{\omega-2}e^{-\lambda x}=0$$ $$(\omega-1)x^{\omega-2} e^{-\lambda x}=\lambda e^{-\lambda x}x^{\omega-1}$$ $$(\omega-1)=\lambda (\frac{e^{-\lambda x} x^{\omega-1}}{e^{-\lambda x}x^{\omega-2}})$$ $$(\omega-1)=\lambda x$$ $$x=\frac{\omega-1}{\lambda}$$
+				Entonces se concluye que la moda es $x_{m}=\frac{\omega-1}{\lambda}_{\blacksquare}$
 				}
 
 				%b
 				\item {
 					Si $X \sim \text{exp}(\lambda)$, demuestre que
                         $$ \mathbb{E}(X^k) = \frac{k!}{\lambda^k} $$
+                        
+                        Se dice que $X \sim \text{exp}(\lambda)$ si su funcion de densidad es de la forma $$f(x)= 	\begin{cases}
+		\lambda e^{-\lambda x} \ si \ x\geq 0 \\
+		0 \ si \ x<0
+	\end{cases}$$ Tenemos que la función generadora de momentos está dada por: $$E(e^{tx})=\int_{0}^{\infty}e^{tx}(\lambda e^{-\lambda x}) dx=\lambda \int_{0}^{\infty}e^{x(t-\lambda)}dx=\lambda ([\frac{e^{x(t-\lambda)}}{t-\lambda}]_{0}^{\infty})=\lambda (\lim_{x\rightarrow \infty} (\frac{e^{x(t-\lambda)}}{t-\lambda})-\frac{e^{0(t-\lambda)}}{t-\lambda})=\frac{\lambda}{\lambda-t}$$
+	Donde la función generadora denotada por $M_{x}(t)$ es una función con variable t.La propiedad que cumple la función generadora de momentos es que $$E(X^{k})=\lim_{t\rightarrow 0}( (\frac{d^{k}}{dx^{k}}) E(e^{tx}))$$ Es decir 
+	$$E(X^{k})=\lim_{t\rightarrow 0}(\frac{\lambda}{\lambda-t})^{(k)}$$ Usando la notación de Lagrange para denotar la k-ésima derivada. \\
+	\textbf{Afirmación:} $M_{x}(t)^{(k)}=\frac{\lambda k!}{(\lambda-t)^{k+1}}$. \\
+	\textit{Demostración:}Procedemos por inducción sobre el número de derivadas de la función generadora de momentos $\frac{\lambda}{\lambda-t}$. Tomamos caso base k=1, es decir la primera derivada:
+	$$M_{x}(t)^{(1)}=(\frac{\lambda}{\lambda-t})^{(1)}=\frac{\lambda 1!}{(\lambda-t)^2}$$ Ahora suponemos que la n-ésima derivada de la función está dada por $M_{x}(t)^{(n)}=\frac{\lambda(n!)}{(\lambda-t)^{n+1}}$ tomemos entonces:
+	$$M_{x}(t)^{(n+1)}=(M_{x}(t)^{(n)})^{(1)}=(\frac{\lambda (n!)}{(\lambda-t)^{n+1}})^{(1)}=\frac{\lambda (n+1)(n!)}{(\lambda-t)^{n+2}}=\frac{\lambda (n+1)!}{(\lambda-t)^{n+2}}$$ Entonces la afirmación es correcta. Entonces, tenemos que $$E(X^{k})=\lim_{t\rightarrow 0}(M_{x}(t))^{(k)}=\lim_{t \rightarrow 0}(\frac{\lambda(k!)}{(\lambda-t)^{k+1}})=\frac{\lambda k!}{\lambda^{k+1}}=\frac{k!}{\lambda^{k}}_{\blacksquare}$$
 				}
 
 			\end{enumerate}
