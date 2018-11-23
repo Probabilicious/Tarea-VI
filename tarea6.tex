@@ -394,13 +394,67 @@
 		%17
 		\item{
 			Si $X \sim \text{Poisson}(\lambda)$, y además $\mathbb{P}(X \leq 1)
-			= 2\mathbb{P}(X = 2)$
+			= 2\mathbb{P}(X = 2)$ , encuentre $\mathbb{E}(X)$
+			
+			Sabemos que $\mathbb{E}(X)$ de una distribución Poisson es $\lambda$
+			
+			Así que resolvamos: $\mathbb{P}(X \leq 1) = 2\mathbb{P}(X = 2)$
+			
+			$\mathbb{P}(X \leq 1) = \mathbb{P}(X = 0) + \mathbb{P}(X = 1)$
+			
+			Sabemos de la función de densidad de la distribución Poisson:
+			
+			$\mathbb{P}(X = 0) = e^{-\lambda} \frac{\lambda^{0}}{0!}$
+			
+			$\mathbb{P}(X = 1) = e^{-\lambda} \frac{\lambda^{1}}{1!}$
+
+			$\mathbb{P}(X = 2) = e^{-\lambda} \frac{\lambda^{2}}{2!}$
+			
+			Entonces:
+			
+			$e^{-\lambda} \frac{\lambda^{0}}{0!} + e^{-\lambda} \frac{\lambda^{1}}{1!} = 2 e^{-\lambda} \frac{\lambda^{2}}{2!}$
+			
+			$e^{-\lambda}  + e^{-\lambda} \lambda =  e^{-\lambda} \lambda^{2}$
+			
+			$e^{-\lambda} (1 + \lambda) =  e^{-\lambda} \lambda^{2}$
+			
+			 $\lambda^{2} - \lambda - 1 = 0$
+			 
+			 Aplicando la ecuación de segundo grado, obtenemos:
+			 
+			 $\lambda = \frac{1 \pm \sqrt{5}}{2}$
+			 
+			 Por lo tanto, $ \mathbb{E}(X) = \frac{1 \pm \sqrt{5}}{2}$\\
+			
 		}
 
 		%18
 		\item{
 			Si $X$ es una variable aleatoria con distribución Poisson tal que
 			$\mathbb{P}(X = 0) = \mathbb{P}(X = 1)$, encuentre $\mathbb{E}(X)$.
+				
+			Sabemos que $\mathbb{E}(X)$ de una distribución Poisson es $\lambda$
+			
+			Así que resolvamos: $\mathbb{P}(X = 0) = \mathbb{P}(X = 1)$
+			
+			Sabemos de la función de densidad de la distribución Poisson:
+			
+			$\mathbb{P}(X = 0) = e^{-\lambda} \frac{\lambda^{0}}{0!}$
+			
+			$\mathbb{P}(X = 1) = e^{-\lambda} \frac{\lambda^{1}}{1!}$
+
+			
+			Entonces:
+			
+			$e^{-\lambda} \frac{\lambda^{0}}{0!} = e^{-\lambda} \frac{\lambda^{1}}{1!}$
+			
+			$e^{-\lambda}  =  e^{-\lambda} \lambda$
+			
+			$1 - \lambda =  0$
+						
+			$\lambda = 1$
+		
+			Por lo tanto, $ \mathbb{E}(X) = 1$\\
 		}
 
 		%19
@@ -408,8 +462,23 @@
 			Un componente con tiempo de vida que se distribuye exponencialmente
 			con una tasa de falla de 1 por 24 horas se pone en servicio con un
 			componente de reemplazo del mismo tipo que se sustituye por el
-			primero cuando falla. ¿Cuál es la mediana del tiempo total hasta la
+			primero cuando falla. ¿Cuál es la media del tiempo total hasta la
 			falla de ambos componentes?
+			
+			Sean $X_{1}, X_{2}$ los dos componentes, sabemos que $X_{1} \sim \text{Exp}(\lambda)$, $X_{2} \sim \text{Exp}(\lambda)$  y que $\lambda = \frac{1}{24}$
+			
+			Y tenemos que calcular $\mathbb{E}(X_{1} + X_{2})$ 
+			
+			Sabemos que si $\{X_i\}_{i=1}^{n}$ con $X_{i} \sim \text{Exp}(\lambda)$ entonces $\sum_{i=1}^{n}  X_{i} \sim \text{Gama}(r, \lambda) $
+			
+			Así que de lo anterior, podemos decir que  $\mathbb{E}(X_{1} + X_{2}) = \mathbb{E}(Y)$ donde $Y \sim \text{Gama}(2, \frac{1}{24})$
+			
+			La esperanza de una distribución Gama es $\frac{r}{\lambda}$
+			
+			Entonces $\mathbb{E}(X_{1} + X_{2}) = \mathbb{E}(Y) = \frac{2}{\frac{1}{24}} = 48$
+			
+			Por lo tanto, la media del tiempo total hasta la
+			falla de ambos componentes es 48.\\
 		}
 
 		%20
@@ -420,15 +489,54 @@
 				%a
 				\item {
 					$\mathbb{E}(X)$
+					
+					Utilizando la propiedad de la exponencial $\mathbb{E}(X + Y) = \mathbb{E}(X) + \mathbb{E}(Y)$:
+					
+					$\mathbb{E}(a+(b - a)U) = \mathbb{E}(a) + \mathbb{E}((b - a)U)$\\
+					
+					Utilizando la propiedad de la exponencial $\mathbb{E}(c) = c$:
+					
+					$\mathbb{E}(a+(b - a)U) = a + \mathbb{E}((b - a)U)$\\
+					
+					Utilizando la propiedad de la exponencial $\mathbb{E}(cx) = c\mathbb{E}(X)$:
+					
+					$\mathbb{E}(a+(b - a)U) = a + (b - a)\mathbb{E}(U)$\\
+					
+					$\mathbb{E}(U) = \frac{\beta + \alpha}{2} = \frac{1+0}{2}$
+					
+					Entonces:
+					
+					$\mathbb{E}(a+(b - a)U) = a + (b - a)\frac{1}{2} = \frac{1}{2}(a+b)$\\
+
+					
+					Por lo tanto, $\mathbb{E}(X) = \frac{a+b}{2}$\\
+						
+					
 				}
 
 				%b
 				\item {
 					$\text{Var}(X)$
+					
+					Utilizando la propiedad de la varianza $\text{Var}(X + c) = \text{Var}(X)$:
+					
+					$\text{Var}(a+(b - a)U) = \text{Var}((b - a)U)$\\
+					
+					Utilizando la propiedad de la varianza $\text{Var}(cX) = c^2\text{Var}(X)$:
+					
+					$\text{Var}(a+(b - a)U) = (b - a)^2 \text{Var}(U)$\\
+					
+									
+					$\text{Var}(U) = \frac{(\beta - \alpha)^2}{12} = \frac{(1-0)^2}{12}$
+					
+					Entonces:
+					
+					$\text{Var}(a+(b - a)U) = (b - a)^2\frac{1}{12}$ \\
+
+					
+					Por lo tanto, $\text{Var}(X) = \frac{(b - a)^2}{12}$ \\
 				}
 			\end{enumerate}
-
-		}
-
+			}
 	\end{enumerate}
 \end{document}
