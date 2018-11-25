@@ -261,11 +261,23 @@
 			\end{enumerate}
 		}
 
-		%9
+			%9
 		\item{
 			Sea X una variable aleatoria continua con función de distribución F.
             Defínase Y una variable aleatoria tal que $Y = F(X)$. Demuestre que
             $Y \sim \text{Unif}(0,1)$.
+            \\
+            Primero tenemos:
+            \[F(y) = y\]
+            De donde:
+            \[y = F(x)\]
+            Entonces:
+            \[F_{x}(y) = \mathbb{P}(Y \leq y) = \mathbb{P}(F(x) \leq y)\]
+            Entonces, esto es igual a:
+            \[\mathbb{P}(F(x) \leq y) = \mathbb{P}(X \leq F^{-1}(y)) = y\]
+            Y el unico distribucion que tiene este forma es $Y \sim \text{Unif}(0,1)$.
+            
+            
 		}
 
 		%10
@@ -277,7 +289,7 @@
 					Demuestre que la función de densidad $N(\mu, \sigma^2)$ es
                     simétrica con respecto a $x = \mu$, alcanza su máximo en
                     $x = \mu$ y tiene puntos de inflexión en $x_1= \mu + \sigma$
-                    y $x_2 = \mu - \sigma$.
+                    y $x_2 = \mu - \sigma$.\\
 				}
 
 				%b
@@ -286,28 +298,79 @@
                     parámetros $\mu = 10$ y $\sigma^2 = 36$.\\
                     Calcule: $\mathbb{P}(X > 5)$, $\mathbb{P}(4 < X < 10)$,
                     $\mathbb{P}(X < 8)$, $\mathbb{P}(X < 20)$ y
-                    $\mathbb{P}(X > 16)$.
+                    $\mathbb{P}(X > 16)$.\\
+                    
+                    Tenemos  $N(\mu = 10, \sigma^2 = 36)$, de donde $\sigma = 6$.
+                    Entonces:
+                    \[ \mathbb{P}(X > 5) = 1 - \mathbb{P}(z \leq \frac{5-10}{6}) =1 - (1 -  F_z(\frac{5}{6})) =  Fz(0.83) = 0.7967 \]
+                    
+                    \[ \mathbb{P}(4 < x < 10) = \mathbb{P}(\frac{4-10}{6} < z < \frac{10-10}{6}) =\mathbb{P}(-1 < z < 0) =  F_z(0) - (1 - F_z(1))\]
+                    \[= 0.5 - 1 + 0.8413 = 0.3413 \]
+                    
+                    \[ \mathbb{P}(X < 8) = \mathbb{P}(z < \frac{8-10}{6}) = F_z(-\frac{1}{3}) = 1 - F_z(0.33) = 1 - 0.6293 = 0.3707 \]
+                    
+                     \[ \mathbb{P}(X < 20) = \mathbb{P}(z < \frac{20-10}{6}) = F_z(\frac{10}{6}) = F_z(1.66) = 0.9515 \]
+                     
+                     \[ \mathbb{P}(X > 16) = 1 - \mathbb{P}(z \leq \frac{16-10}{6}) = 1 -  F_z(1) =  1 - 0.8413 = 0.1587 \]
 				}
 
 				%c
 				\item {
-					Suponga que $X$ es una variable aleatoria con media y
-					varianza igual a 20- ¿Qué se puede decir de
-					$\mathbb{P}(0 \leq X \leq 40)$?
+				Suponga que X es una variable aleatoria con distribucíon normal con media 5 .$\mathbb{P} (X > 9) = \frac{1}{5}$, calcule la varianza de X.\\
+				
+				Tenemos que:
+				\[\mathbb{P}(X > 9) = 1 - \mathbb{P}(X \leq 9) = .20\]
+				Entonces:
+				\[- \mathbb{P}(X \leq 9) = - 0.80\]
+				\[\mathbb{P}(X \leq 9) = 0.80 \]
+				Queremos encuentrar $\sigma$, entonces:
+				\[\phi(\frac{9 - 5}{\sigma}) = 0.80 \]
+				\[\phi(\frac{4}{\sigma}) = 0.80\]
+				En la tabla, $0.80$ esta dentro de $\phi(.84)$ y $\phi(.85)$ tal que:
+				\[\phi(.84) < 0.80 < \phi(.85) \]
+				\[.7945 < .80 < .8023\]
+				Aplicando la integral con $0.845$ se acerca a .80 por 2 decimales con 0.8009, entonces para:
+				\[\mathbb{P}(X \leq 9) = \phi(\frac{4}{\sigma}) \approx \phi(0.845)\]
+				Resolviendo $\frac{4}{\sigma} \approx 0.845$ para $\sigma$ se tiene:
+				\[ \sigma \approx \frac{4}{0.845} = 4.73\]
+				Por lo tanto:
+				\[ \sigma \approx 4.73 ; \sigma^2 \approx 22.40 \]
+				Entonces la varianza de X es aproximadamente 22.4.
 				}
 
 				%d
 				\item {
 					Sea $X$ una variable aleatoria con distribución normal con
 					media 12 y varianza 4. Encontrar el valor de $\tau$ tal que
-					$\mathbb{P}(X < \tau) \in \{0,1\}$.
+					$\mathbb{P}(X < \tau) \in \{0,1\}$.\\
+					Tenemos que cuando x de $\phi(x)$ es igual a infinito, da 1. Y que cuando x es igual a menos infinito, da 0. Entonces:
+					\[\phi(-\infty) \leq \frac{r-\mu}{\sigma} \leq \phi(\infty)\]
+					Para esto tenemos:
+					\[\frac{r-\mu}{\sigma} = -\infty\]
+					\[ r - \mu = -\infty \sigma = -\infty\]
+					\[r = -\infty - \mu \]
+					\[r = -\infty\]
+					Lo cual seria analogamente con $\infty$. Por lo tanto r puede tener valor de:
+					\[ -\infty \leq r \leq \infty \]
+					Ya que:
+					\[\int^{\infty}_{-\infty}\frac{1}{\sigma\sqrt{2\pi}}e^{\frac{1}{2}(\frac{x-\mu}{\sigma})^2} = 1\]
 				}
 
 				%e
 				\item {
 					Si $X$ tiene una distribución normal con media $\mu = 9$ y
 					varianza $\sigma^2 = 4$, encontrar \\
-					$\mathbb{P}(X^2 - 2X \leq 8)$
+					$\mathbb{P}(X^2 - 2X \leq 8)$\\
+					Tenemos $\mathbb{P}(X^2 - 2X \leq 8)$, resolviendo para X tenemos:
+					\[X^2 - 2X - 8 = 0\]
+					\[(X + 2) (X - 4) = 0\]
+					Entonces:
+					\[\mathbb{P}(-2 < X < 4) \]
+					De donde:
+					\[ \mathbb{P}(-2 < x < 4) = \mathbb{P}(\frac{-2-9}{2} < z < \frac{4-9}{2}) =\mathbb{P}(\frac{-11}{2} < z < \frac{-5}{2}) =  (1 - F_z(2.5)) - (1 - F_z(5.5))\]
+					\[  1 - \phi(2.5) = 1 - 0.9938 = 0.0062\]
+					\[ 1 - \phi(5.5) = 1 - 0.9999 = 0.0001 \]
+					\[\mathbb{P}(-2 < x < 4) = 0.0062 - 0.0001 = 0.0061\]
 				}
 			\end{enumerate}
 		}
@@ -316,14 +379,34 @@
 		\item{
 			Sea $X$ una variable aleatoria con distribución uniforme en el
 			intervalo $(-\frac{\pi}{2}, \frac{\pi}{2})$. Encuentre la función de
-			distribución y la función de densidad $Y = \tan(X)$.
+			distribución y la función de densidad $Y = \tan(X)$.\\
+			\[FY(y) = P(Y = y)\]
+		\[=P(tan(X) \le y\]
+		Si resolvemos para y:
+		\[P(X \le arctan(y))\]
+		\[Fx(arctan(y))\]
+		\[= \int^{arctan(y)}_{-\frac{\pi}{2}}\frac{1}{\frac{\pi}{2}- (- \frac{\pi}{2}}dx\]
+		\[= \int^{arctan(y)}_{-\frac{\pi}{2}} \frac{1}{\pi}\]
+		\[=\frac{1}{\pi}|^{arctan(y)}_{-\frac{\pi}{2}}\]
+		\[FY(y)=\frac{arctan(y) + \frac{\pi}{2}}{2}\]
+			
 		}
 
 		%12
 		\item{
 			Si $X \sim \text{Unif}(0, 10)$, calcular
-			$\mathbb{P}(X + \frac{10}{X} > 7)$
+			$\mathbb{P}(X + \frac{10}{X} > 7)$\\
+			Resolviendo para X tenemos:
+			\[X + \frac{10}{X} - 7 = 0\]
+			\[ (x - 5) (x - 2) = 0\]
+			De donde se tiene:
+			\[x_1 = 5 ; x_2 = 2\]
+			\[\mathbb{P}(0 < x < 2) + \mathbb{P}(5 < x <10)\]
+			Calculando tenemos:
+			\[\int^{2}_{0}\frac{1}{10-0}dx + \int^{10}_{5}\frac{1}{10-0}dx = \frac{1}{5} + \frac{1}{2} = \frac{7}{10}\]
+			
 		}
+
 
 		%13
 		\item{
