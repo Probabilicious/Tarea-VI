@@ -154,22 +154,34 @@
             logrado el objetivo. Calcule la probabilidad de que se requieran, en
             total, menos de 12 lanzamientos.\\
 			Se busca la probabilidad de que se logre obtener las 5 águilas en 9,
-			10 u 11 lanzamientos. Es decir, la probabilidad de obtener 4, 5, o
-			6 fracasos antes del quinto éxito. \\
+			10 u 11 lanzamientos, dado que no se han obtenido las 5 águilas en
+			los 8 primero lanzamientos. Es decir, la probabilidad de obtener a
+			los más 6 fracasos antes del quinto éxito dado que han ocurrido
+			al menos 4 fracasos. \\
 			Esto es una distribución binomial negativa.\\
 			Es decir $X \sim BinNeg(\frac{1}{2}, 5)$. Esto significa que
-			\[f_X(x) = {x+5 \choose x} \frac{1}{2}^5 \frac{1}{2}^x =
-			{x+5 \choose x} \frac{1}{2}^{5+x}\]
+			\[f_X(x) = {x+5-1 \choose x} \frac{1}{2}^5 \frac{1}{2}^x =
+			{x+5-1 \choose x} \frac{1}{2}^{5+x}\]
 			Como estas probabilidades son independientes entonces la probabilidad
 			de que ocurra alguna de ellas es la suma de las probabilidades.
-			\[f_X(4) = {9 \choose 4} \frac{1}{2}^{9} = \frac{126}{512}\]
-			\[f_X(5) = {10 \choose 5} \frac{1}{2}^{10} = \frac{252}{1024}\]
-			\[f_X(6) = {11 \choose 6} \frac{1}{2}^{11} = \frac{462}{2048}\]
+			\[f_X(0) = {4 \choose 0} \frac{1}{2}^{5} = \frac{1}{32}\]
+			\[f_X(1) = {5 \choose 1} \frac{1}{2}^{6} = \frac{5}{64}\]
+			\[f_X(2) = {6 \choose 2} \frac{1}{2}^{7} = \frac{15}{128}\]
+			\[f_X(3) = {7 \choose 3} \frac{1}{2}^{8} = \frac{35}{256}\]
+			\[f_X(4) = {8 \choose 4} \frac{1}{2}^{9} = \frac{70}{512}\]
+			\[f_X(5) = {9 \choose 5} \frac{1}{2}^{10} = \frac{126}{1024}\]
+			\[f_X(6) = {10 \choose 6} \frac{1}{2}^{11} = \frac{210}{2048}\]
 			\begin{align*}
-				P(8 < X < 12) &= f_X(4) + f_X(5) + f_X(6) \\
-							  &= \frac{252+252+231}{1024} \\
-							  &= \frac{735}{1024} \\
-							  &\approx 0.72
+				P(X \leq 6 | X \geq 4) &= \frac{P(X \leq 6 \cap X \geq 4)}{P(X \geq 4)}\\
+							  &=\frac{P(X \leq 6 \cap X \geq 4)}{1-P(X < 4)}  \\
+							  &=\frac{f_X(4) + f_X(5) + f_X(6)}
+							  {1-(f_X(0) + f_X(1) + f_X(2)+ f_X(3))}  \\
+							  &= \frac{\frac{140+126+105}{1024}}
+							  {1-\frac{8+20+30+35}{256}} \\
+							  &= \frac{\frac{371}{1024}}{1-\frac{93}{256}} \\
+							  &= \frac{\frac{371}{1024}}{\frac{163}{256}} \\
+							  &= \frac{371}{652} \\
+							  &\approx 0.57
 			\end{align*}
 		}
 
