@@ -198,7 +198,7 @@
             $$\frac{1}{5}(\frac{(\frac{5}{6})^{\epsilon+1}-1}{-\frac{1}{6}})\geq \frac{1}{2}\Leftrightarrow \frac{1}{5}((\frac{5}{6})^{\epsilon+1}-1)\leq -\frac{1}{12}$$
             $$(\frac{5}{6})^{\epsilon+1}\leq -\frac{5}{12}+1=\frac{7}{12}$$
             $$(\frac{5}{6})^{\epsilon+1}\leq \frac{7}{12}$$
-            
+
             Tenemos que la igualdad se da cuando:
             $$(\frac{5}{6})^{\epsilon+1}=\frac{7}{12}\Leftrightarrow log_{\frac{5}{6}}(\frac{7}{12})=\epsilon+1 \Leftrightarrow \epsilon=log_{\frac{5}{6}}(\frac{7}{12})-1
             $$
@@ -219,7 +219,7 @@
             Usamos la distribución hipergeométrica. Tenemos entonces que ésta está dada por:
             $$p(i)=\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}}$$
             Y se tiene que en éste caso N=400,n=10,m=6,i=1. Entonces se sigue que:
-            
+
             $$p(1)=\frac{\binom{6}{1}\binom{400-6}{10-1}}{\binom{400}{10}}\approx 0.1337 $$
 		}
 
@@ -241,16 +241,16 @@
 				%a
 				\item {
 					Encuentre la moda de la distribución gamma.
-					
-				
-				Tenemos que la función de distribución gamma con parámetros $\lambda$ y $\omega$ está dada por 
+
+
+				Tenemos que la función de distribución gamma con parámetros $\lambda$ y $\omega$ está dada por
 				$$f(x)=\frac{\lambda e^{-\lambda x}(\lambda x)^{\omega-1}}{\Gamma(\omega)}=\frac{\lambda e^{-\lambda x}(\lambda x)^{\omega -1}}{\int_{0}^{\infty}e^{-x}x^{\omega -1}dx}$$ Y la moda se define como el valor $x_{m}$ tal que $$f'(x_{m})=0$$
 				Es decir cuando alcance un máximo. Hagamos la siguiente afirmación:\\
 				\textbf{Afirmación:} $\Gamma(\omega)=(\omega-1)!$ \\
-				\textit{Demostración:} Tomemos como caso base $\Gamma(1)$ tenemos que $$\Gamma(1)=\int_{0}^{\infty}e^{-x}x^{1-1}dx=\int_{0}^{\infty}e^{-x}dx=[-e^{-x}]_{0}^{\infty}=\lim_{x\rightarrow \infty}(-e^{-x})+e^{-0}=1$$ 
+				\textit{Demostración:} Tomemos como caso base $\Gamma(1)$ tenemos que $$\Gamma(1)=\int_{0}^{\infty}e^{-x}x^{1-1}dx=\int_{0}^{\infty}e^{-x}dx=[-e^{-x}]_{0}^{\infty}=\lim_{x\rightarrow \infty}(-e^{-x})+e^{-0}=1$$
 				Ahora supongamos que para $n$ se cumple $\Gamma(n)=(n-1)!$. Demostremos que para $\Gamma(n+1)$ se cumple que $\Gamma(n+1)=n!$. Tenemos que: $$\Gamma(n+1)=\int_{0}^{\infty}e^{-x}x^{n+1-1}dx=\int_{0}^{\infty}e^{-x}x^{n}dx$$ Utilizando integración por partes uno puede ver que es igual a $$=[-x^{n}e^{-x}]_{0}^{\infty}+\int_{0}^{\infty}n  x^{n-1}e^{-x}dx=\lim_{x\rightarrow \infty}(-x^n e^{-x})-(-0^{n} e^{-0})+n\int_{0}^{\infty}x^{n-1}e^{-x}dx$$ $$=n\int_{0}^{\infty}x^{n-1}e^{-x}dx=n\Gamma(n)$$
 				Y esto resulta de conocer previamente que $\lim_{x \rightarrow \infty}(-x^{n}e^{-x})=0$. Además, como por hipótesis de inducción tenemos que $\Gamma(n)=(n-1)!$ se sigue que $$n\Gamma(n)=n(n-1)!=n!_{\blacktriangle}$$ Entonces, tenemos que $$f(x)=\frac{\lambda e^{-\lambda x}(\lambda x)^{\omega-1}}{(\omega-1)!}=\frac{(\lambda)^{\omega}e^{-\lambda x}x^{\omega-1}}{(\omega-1)!}=\frac{\lambda^{\omega}}{(\omega-1)!}(e^{-\lambda x}x^{\omega-1})$$ Tenemos entonces que la derivada estará dada por $$f'(x)=(\frac{\lambda^{\omega}}{(\omega-1)!}) (-\lambda e^{-\lambda x}x^{\omega-1}+(\omega-1)x^{\omega-2}e^{-\lambda x})$$ Y se hace cero cuando $$ -\lambda e^{-\lambda x}x^{\omega-1}+(\omega-1)x^{\omega-2}e^{-\lambda x}=0$$ $$(\omega-1)x^{\omega-2} e^{-\lambda x}=\lambda e^{-\lambda x}x^{\omega-1}$$ $$(\omega-1)=\lambda (\frac{e^{-\lambda x} x^{\omega-1}}{e^{-\lambda x}x^{\omega-2}})$$ $$(\omega-1)=\lambda x$$ $$x=\frac{\omega-1}{\lambda}$$
-	Tenemos además que la segunda derivada está dada por: 
+	Tenemos además que la segunda derivada está dada por:
 				$$f''(x)=(\frac{\lambda^{\omega}}{(\omega-1)!})(\lambda^2 e^{-\lambda x}x^{\omega-1}-\lambda(\omega-1)x^{\omega-2}e^{-\lambda x}+(\omega-1)((\omega-2)x^{\omega-3}e^{-\lambda x}-\lambda(\omega-1)e^{-\lambda x})$$
 				Tenemos que $f''(\frac{\omega-1}{\lambda})<0$ entonces se trata de un máximo por lo tanto se concluye que la moda es $x_{m}=\frac{\omega-1}{\lambda}_{\blacksquare}$
 				Entonces se concluye que la moda es $x_{m}=\frac{\omega-1}{\lambda}_{\blacksquare}$
@@ -260,12 +260,12 @@
 				\item {
 					Si $X \sim \text{exp}(\lambda)$, demuestre que
                         $$ \mathbb{E}(X^k) = \frac{k!}{\lambda^k} $$
-                        
+
                         Se dice que $X \sim \text{exp}(\lambda)$ si su funcion de densidad es de la forma $$f(x)= 	\begin{cases}
 		\lambda e^{-\lambda x} \ si \ x\geq 0 \\
 		0 \ si \ x<0
 	\end{cases}$$ Tenemos que la función generadora de momentos está dada por: $$E(e^{tx})=\int_{0}^{\infty}e^{tx}(\lambda e^{-\lambda x}) dx=\lambda \int_{0}^{\infty}e^{x(t-\lambda)}dx=\lambda ([\frac{e^{x(t-\lambda)}}{t-\lambda}]_{0}^{\infty})=\lambda (\lim_{x\rightarrow \infty} (\frac{e^{x(t-\lambda)}}{t-\lambda})-\frac{e^{0(t-\lambda)}}{t-\lambda})=\frac{\lambda}{\lambda-t}$$
-	Donde la función generadora denotada por $M_{x}(t)$ es una función con variable t.La propiedad que cumple la función generadora de momentos es que $$E(X^{k})=\lim_{t\rightarrow 0}( (\frac{d^{k}}{dx^{k}}) E(e^{tx}))$$ Es decir 
+	Donde la función generadora denotada por $M_{x}(t)$ es una función con variable t.La propiedad que cumple la función generadora de momentos es que $$E(X^{k})=\lim_{t\rightarrow 0}( (\frac{d^{k}}{dx^{k}}) E(e^{tx}))$$ Es decir
 	$$E(X^{k})=\lim_{t\rightarrow 0}(\frac{\lambda}{\lambda-t})^{(k)}$$ Usando la notación de Lagrange para denotar la k-ésima derivada. \\
 	\textbf{Afirmación:} $M_{x}(t)^{(k)}=\frac{\lambda k!}{(\lambda-t)^{k+1}}$. \\
 	\textit{Demostración:}Procedemos por inducción sobre el número de derivadas de la función generadora de momentos $\frac{\lambda}{\lambda-t}$. Tomamos caso base k=1, es decir la primera derivada:
@@ -291,8 +291,8 @@
             Entonces, esto es igual a:
             \[\mathbb{P}(F(x) \leq y) = \mathbb{P}(X \leq F^{-1}(y)) = y\]
             Y el unico distribucion que tiene este forma es $Y \sim \text{Unif}(0,1)$.
-            
-            
+
+
 		}
 
 		%10
@@ -314,25 +314,25 @@
                     Calcule: $\mathbb{P}(X > 5)$, $\mathbb{P}(4 < X < 10)$,
                     $\mathbb{P}(X < 8)$, $\mathbb{P}(X < 20)$ y
                     $\mathbb{P}(X > 16)$.\\
-                    
+
                     Tenemos  $N(\mu = 10, \sigma^2 = 36)$, de donde $\sigma = 6$.
                     Entonces:
                     \[ \mathbb{P}(X > 5) = 1 - \mathbb{P}(z \leq \frac{5-10}{6}) =1 - (1 -  F_z(\frac{5}{6})) =  Fz(0.83) = 0.7967 \]
-                    
+
                     \[ \mathbb{P}(4 < x < 10) = \mathbb{P}(\frac{4-10}{6} < z < \frac{10-10}{6}) =\mathbb{P}(-1 < z < 0) =  F_z(0) - (1 - F_z(1))\]
                     \[= 0.5 - 1 + 0.8413 = 0.3413 \]
-                    
+
                     \[ \mathbb{P}(X < 8) = \mathbb{P}(z < \frac{8-10}{6}) = F_z(-\frac{1}{3}) = 1 - F_z(0.33) = 1 - 0.6293 = 0.3707 \]
-                    
+
                      \[ \mathbb{P}(X < 20) = \mathbb{P}(z < \frac{20-10}{6}) = F_z(\frac{10}{6}) = F_z(1.66) = 0.9515 \]
-                     
+
                      \[ \mathbb{P}(X > 16) = 1 - \mathbb{P}(z \leq \frac{16-10}{6}) = 1 -  F_z(1) =  1 - 0.8413 = 0.1587 \]
 				}
 
 				%c
 				\item {
-				Suponga que X es una variable aleatoria con distribucíon normal con media 5 .$\mathbb{P} (X > 9) = \frac{1}{5}$, calcule la varianza de X.\\
-				
+				Suponga que X es una variable aleatoria con distribución normal con media 5 .$\mathbb{P} (X > 9) = \frac{1}{5}$, calcule la varianza de X.\\
+
 				Tenemos que:
 				\[\mathbb{P}(X > 9) = 1 - \mathbb{P}(X \leq 9) = .20\]
 				Entonces:
@@ -404,7 +404,7 @@
 		\[= \int^{arctan(y)}_{-\frac{\pi}{2}} \frac{1}{\pi}\]
 		\[=\frac{1}{\pi}|^{arctan(y)}_{-\frac{\pi}{2}}\]
 		\[FY(y)=\frac{arctan(y) + \frac{\pi}{2}}{2}\]
-			
+
 		}
 
 		%12
@@ -419,7 +419,7 @@
 			\[\mathbb{P}(0 < x < 2) + \mathbb{P}(5 < x <10)\]
 			Calculando tenemos:
 			\[\int^{2}_{0}\frac{1}{10-0}dx + \int^{10}_{5}\frac{1}{10-0}dx = \frac{1}{5} + \frac{1}{2} = \frac{7}{10}\]
-			
+
 		}
 
 
@@ -431,12 +431,95 @@
 			no será monitoreado durante sus dos primeros años de servicio, el
 			tiempo para descubrir una falla es $X = \text{máx}\{T,2\}$.
 			Encuentre $\mathbb{E}(X)$.
+
+			Se tiene, como T se distribuye exponencial con media de 3 años:
+				$$ T \sim Exp(\lambda), f_T^{(t)} = \lambda e^{-\lambda t}$$
+			y se cumple:
+				$$ \mathbb{E}(T) = \frac{1}{\lambda}$$
+			como se supone una media de 3 años:
+				$$ 3 = \frac{1}{\lambda} \Rightarrow \lambda = \frac{1}{3}$$
+			se tiene $g(T) = X = max\{T, 2\}$, para hallar $\mathbb{E}(X)$,
+			usando la "Ley del estadístico inconsciente":
+				$$ \mathbb{E}[g(T)] = \int_{-\infty}^{\infty} g(T) f_T{(t)}dt $$
+				$$ \mathbb{E}[max\{T,2\}] = \int_{-\infty}^{\infty} max\{T,2\}
+				 							\lambda e^{-\lambda t} dt $$
+			como $T \sim Exp(\lambda)$, se tiene $t > 0$, así:
+				$$ \mathbb{E}[max\{T,2\}] = \lambda \int_{0}^{\infty} max\{T,2\}
+				 							e^{-\lambda t} dt $$
+			Como $max\{T,2\} = t$ si $t \geq 2$ y $max\{T,2\} = 2$ si $t < 2$,
+			entonces:
+				$$ \mathbb{E}[X] =\lambda \Big[ 2\int_{0}^{2} e^{-\lambda t} dt
+				              + \int_{2}^{\infty} t e^{-\lambda t} dt \Big] $$
+				$$ \mathbb{E}[X] =\lambda \Big[ 2 \cdot
+								 \frac{1}{-\lambda}\int_{u(0)}^{u(2)} e^u du
+				              + \int_{2}^{\infty} t e^{-\lambda t} dt \Big] $$
+				$$ \mathbb{E}[X] =\lambda \Big[
+								 \frac{2}{-\lambda} \Big[ e^{-\lambda t}
+								 \Big]_{t=0}^{2}
+				              + \int_{2}^{\infty} t e^{-\lambda t} dt \Big]
+							  	...(A)$$
+
+			integrando por partes $\int_{2}^{\infty} t e^{-\lambda t} dt$, se
+			tiene, considerando $u = t$, $dv = e^{-\lambda t} $
+				$$ \int_{2}^{\infty} t e^{-\lambda t} dt
+				=  \Big[ t \frac{1}{- \lambda} e^{-\lambda t} \Big]_{2}^{\infty}
+					- \int_{2}^{\infty} \frac{1}{- \lambda} e^{-\lambda t} dt$$
+				$$ = \frac{\infty \cdot e^{-\infty}}{-\lambda}
+				   + \frac{2e^{-2\lambda}}{\lambda} + \frac{1}{\lambda}
+				    \Big[ \frac{1}{- \lambda } (e^{-\lambda
+					t})_{0}^{\infty}\Big]$$
+				$$ = \frac{\infty \cdot e^{-\infty}}{-\lambda}
+				   + \frac{2e^{-2\lambda}}{\lambda} + \frac{1}{\lambda}
+				    \Big[ \frac{1}{\lambda } (e^{-2 \lambda})\Big]$$
+				$$ = 0 + \frac{2e^{-2\lambda}}{\lambda}
+				   + \frac{ e^{-2 \lambda} }{\lambda^2} $$
+			De (A), se tiene:
+				$$ \mathbb{E}[X] =\lambda \Big[
+								 \frac{2}{-\lambda} \Big[ e^{-\lambda t}
+								 \Big]_{t=0}^{2}
+							  + \int_{2}^{\infty} t e^{-\lambda t} dt \Big]
+					= \lambda \Big[ \frac{2e^{-2\lambda}}{-\lambda}
+								  +	\frac{2}{\lambda}
+								  + \frac{2e^{-2\lambda}}{\lambda}
+								  + \frac{ e^{-2 \lambda} }{\lambda^2} \Big]$$
+				$$ = \lambda \Big[ \frac{2}{\lambda}
+							     + \frac{ e^{-2 \lambda} }{\lambda^2} \Big]
+				   = 2 + \frac{ e^{-2 \lambda} }{\lambda}
+				   = 2 + \frac{ e^{- \frac{2}{3}} }{\frac{1}{3}}
+				   = 2 + 3e^{-\frac{2}{3}} $$
+			Concluimos así, para la variable aleatoria $X$:
+				$$ \mathbb{E}[X] = 2 + 3e^{-\frac{2}{3}} $$
+
 		}
 
 		%14
 		\item{
 			Demuestre que si $X \sim \text{Hipergeométrica}(N,m,n)$, entonces.
 				$$ \sum_{x = 0}^{n}f_X(x) = 1$$
+
+			Si $X \sim Hipergeometrica(N, m, n)$, se cuple que para la variable
+			aleatoria $X$, la función de densidad es:
+				$$ f_X^{(x)} = \frac{{m \choose x} {N-m \choose n-x} }
+							   {{N \choose n}} $$
+			luego, se sigue:
+				$$ \sum_{x = 0}^{n} f_X^{(x)} = \sum_{x = 0}^{n}
+				   \frac{{m \choose x} {N-m \choose n-x} } {{N \choose n}}$$
+			lo cual es equivalente a
+				$$ \frac{1}{{N \choose n}} \sum_{x = 0}^{n}
+				   {m \choose x} {N-m \choose n-x}$$
+
+			Consideremos ahora la identidad de Vandermonde, la cual enuncia:
+				$$ \sum_{x = 0}^{k} {r \choose i} {q \choose k - i}
+				   = {r + q \choose k}$$
+			considerando así, $r = m$, $q = N-m$, $i = x$, $k = n$, se puede
+			decir:
+				$$ \frac{1}{{N \choose n}} \sum_{x = 0}^{n} {m \choose x}
+				  {N-m \choose n-x} = \frac{1}{{N \choose n}}
+				  {m + (N-m) \choose n} $$
+				$$ = \frac{1}{{N \choose n}} {N \choose n} = 1 $$
+									 						  \begin{flushright}
+															  	$\square$
+										         			  \end{flushright}
 		}
 
 		%15
@@ -448,18 +531,94 @@
 				\item {
 					$\mathbb{P}(X = x + 1) = \frac{p}{1 - p} \frac{n - x}{x + 1}
 					 \mathbb{P}(X = x)$
+
+					Si $X \sim Bin(n, p)$, entonces:
+						$$ P(X = x + 1) = f_X^{(x + 1)}
+						   = {n \choose x + 1}p^{x+1}(1-p)^{n - (x + 1) }  $$
+						$$ = {n \choose x + 1}p^xp
+							 \frac{(1-p)^{n - x}}{(1 - p)} $$
+						$$ = \frac{p}{1 - p}{n \choose x + 1}p^x (1-p)^{n - x}$$
+
+					notemos que
+						$$ {n \choose x + 1} = \frac{n!}{(n-(x +1))! (x+1)!}
+					      = \frac{n!}{(n-(x +1))! (x+1)x!}$$
+						$$ = \frac{n!}{((n- x) - 1))! (x)! (x+1)} $$
+
+					Luego, se tiene:
+						$$ {n \choose x + 1} = \frac{n - x}{n - x} \cdot
+						   \frac{n!}{((n- x) - 1))! (x)! (x+1)}
+						   $$
+						$$ = \frac{n - x}{x - 1} \cdot \frac{n!}{(n-x)! (x)!}
+						   = \frac{n - x}{x - 1} {n \choose x} $$
+
+					se sigue que:
+						$$ \frac{p}{1 - p}{n \choose x + 1}p^x (1-p)^{n - x}
+						   = \frac{p}{1 - p} \cdot \frac{n - x}{x - 1}
+						     {n \choose x} p^x (1-p)^{n - x}$$
+					notemos que de lo anterior, podemos extraer la función de
+					densidad para $P(X = x)$, entonces:
+						$$ \frac{p}{1 - p} \cdot \frac{n - x}{x - 1}
+						  {n \choose x} p^x (1-p)^{n - x}
+						  = \frac{p}{1-p} \cdot \frac{n - x}{x - 1} f_X^{(x)}$$
+						$$ = \frac{p}{1-p} \cdot \frac{n - x}{x - 1} P(X = x)$$
 				}
 
 				%b
 				\item {
 					$\mathbb{P}(X \in \{ 1,3,5,...\}) = \frac{1}{2}
-					 (1 - (1 - 2p)^2)$
+					 (1 - (1 - 2p)^n)$
+
+					Si $X \sim Bin(n, p)$, se cumple :
+						$$ P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3) ...
+						   = \sum_{x = 0}^{n} {n \choose x}p^x(1 - p)^{n - x}$$
+					luego, por el teorema del binomio:
+						$$ \sum_{x = 0}^{n} {n \choose x}p^x(1 - p)^{n - x}
+						   = (p + (1 - p))^n$$
+					Notemos que análogamente:
+						$$ P(X = 0) - P(X = 1) + P(X = 2) - P(X = 3) ...
+						   = \sum_{x = 0}^{n}{n \choose x}(-p)^x(1-p)^{n-x}$$
+						$$ = (- p + (1 - p))^n $$
+					Restando de la primera serie la segunda, resulta:
+						$$ \sum_{x = 0}^{n} {n \choose x}p^x(1 - p)^{n - x}
+						 - \sum_{x = 0}^{n}{n \choose x}(-p)^x(1-p)^{n - x} $$
+						$$ = P(X = 0) - P(X = 0) + 2P(X = 1) +
+							 P(X = 2) - P(X = 2) + 2P(X = 3) + ...$$
+						$$ = 2 P(X = 1) + 2 P(X = 3) + ...$$
+
+					de ahí:
+						$$ 2 P(x \in \{1,3,5,...\})
+						   = (p + (1 - p))^n - (- p + (1 - p))^n $$
+
+						$$ P(x \in \{1,3,5,...\})
+						   = \frac{(p + (1 - p))^n - (- p + (1 - p))^n}{2}
+						   = \frac{1 - (1 - 2p)^n}{2}
+						   = \frac{1}{2}(1 - (1 - 2p)^n)$$
 				}
 
 				%c
 				\item {
 					$\mathbb{P}(X \in \{ 0,2,4,...\}) = \frac{1}{2}
-					 (1 + (1 - 2p)^2)$
+					 (1 + (1 - 2p)^n)$
+
+					análogamente al caso anterior, sólamente sumando ambas
+					series:
+						$$ \sum_{x = 0}^{n} {n \choose x}p^x(1 - p)^{n - x}
+						 + \sum_{x = 0}^{n}{n \choose x}(-p)^x(1-p)^{n - x} $$
+						$$ = 2 P(X = 0) + P(X = 1) - P(X = 1) +
+							 2 P(X = 2) + P(X = 3) - P(X = 3) + ...$$
+						$$ = 2 P(X = 0) + 2 P(X = 2) + ...$$
+
+						de ahí:
+						$$ 2 P(x \in \{0,2,4,...\})
+						   = (p + (1 - p))^n + (- p + (1 - p))^n $$
+
+						$$ P(x \in \{0,2,4,...\})
+						   = \frac{(p + (1 - p))^n + (- p + (1 - p))^n}{2}
+						   = \frac{1 + (1 - 2p)^n}{2}
+						   = \frac{1}{2}(1 + (1 - 2p)^n)$$
+														     \begin{flushright}
+													 		  	$\square$
+													 	  	  \end{flushright}
 				}
 			\end{enumerate}
 		}
@@ -473,18 +632,75 @@
 				\item {
 					$\mathbb{P}(X = x + 1) = \frac{\lambda}{x + 1}
 					 \mathbb{P}(X = x)$
+
+					Si $X \sim Poisson(\lambda)$, entonces:
+						$$ P(X = x + 1) = \frac{e^{-\lambda} \lambda^{(x + 1)}}
+										  {(x + 1)!}
+						 = \frac{e^{-\lambda} \lambda^x \lambda} {(x + 1) x!}
+						 = \frac{\lambda}{x + 1}
+						   \frac{e^{-\lambda} \lambda^x}{x!}$$
+					como de lo anterior, la segunda fracción, corresponde a
+					la función de densidad aplicada a $P(X = x)$, se sigue:
+						$$ = \frac{\lambda}{x + 1} f_X^{(x)}
+						   = \frac{\lambda}{x + 1} P(X = x)$$
 				}
 
 				%b
 				\item {
 					$\mathbb{P}(X \in \{ 1,3,5,...\}) = \frac{1}{2}
 					 (1 - e^{-2\lambda})$
+
+					Se tiene, si $X \sim Poisson(\lambda)$:
+						$$P(X = x) = \frac{e^{-\lambda} \lambda^x}{x!}$$
+					así, se cumple:
+						$$P(X \in \mathbb{N}) = \sum_{x=0}^{\infty}
+						  \frac{e^{-\lambda} \lambda^x}{x!}$$
+					de lo anterior, para numeros enteros impares, se sigue:
+						$$P(X \in \{1,3,5,...\}) = \sum_{x=0}^{\infty}
+						  \frac{e^{-\lambda} \lambda^{2x + 1}}{(2x + 1)!}$$
+						$$ = e^{-\lambda }\sum_{x=0}^{\infty}
+						  \frac{\lambda^{2x + 1}}{(2x + 1)!}$$
+					Considerando que la expansión en series de Taylor para
+					el seno hiperbólico corresponde a:
+						$$ \sinh x = \sum_{n=0}^{\infty}
+						  \frac{x^{2n + 1}}{(2n + 1)!}  $$
+					y que la definición del seno hiperbólico es :
+						$$ \sinh x = \frac{e^x - e^{-x}}{2} $$
+					se sigue:
+						$$ e^{-\lambda }\sum_{x=0}^{\infty}
+						   \frac{\lambda^{2x + 1}}{(2x + 1)!}
+						  = e^{-\lambda } \sinh \lambda
+						  = e^{-\lambda } \frac{e^{\lambda} - e^{-\lambda}}
+						    {2} $$
+						$$ = \frac{1 - e^{-2\lambda}}{2}
+						   = \frac{1}{2}(1 - e^{-2\lambda})$$
 				}
 
 				%c
 				\item {
 					$\mathbb{P}(X \in \{ 0,2,4,...\}) = \frac{1}{2}
 					 (1 + e^{-2\lambda})$
+
+					Análogo al caso anterior, pero considerando la expansión
+					en series de Taylor para el coseno hiperbólico:
+						$$ \cosh x = \sum_{n=0}^{\infty}
+						  \frac{x^{2n}}{(2n)!}  $$
+					y su definición:
+						$$ \cosh x = \frac{e^x + e^{-x}}{2} $$
+
+					Se tiene para los enteros pares:
+						$$P(X \in \{0,2,4,...\}) = \sum_{x=0}^{\infty}
+						  \frac{e^{-\lambda} \lambda^{2x}}{(2x)!}$$
+						$$ = e^{-\lambda }\sum_{x=0}^{\infty}
+						  \frac{\lambda^{2x}}{(2x)!}
+						  = e^{-\lambda } \cosh \lambda
+						  = e^{-\lambda } \frac{e^{\lambda} + e^{-\lambda}}
+						    {2} $$
+						$$ = \frac{1 + e^{-2\lambda}}{2}
+						   = \frac{1}{2}(1 + e^{-2\lambda})$$
+														   \begin{flushright}
+															  $\square$
+															\end{flushright}
 				}
 			\end{enumerate}
 		}
@@ -493,65 +709,65 @@
 		\item{
 			Si $X \sim \text{Poisson}(\lambda)$, y además $\mathbb{P}(X \leq 1)
 			= 2\mathbb{P}(X = 2)$ , encuentre $\mathbb{E}(X)$
-			
+
 			Sabemos que $\mathbb{E}(X)$ de una distribución Poisson es $\lambda$
-			
+
 			Así que resolvamos: $\mathbb{P}(X \leq 1) = 2\mathbb{P}(X = 2)$
-			
+
 			$\mathbb{P}(X \leq 1) = \mathbb{P}(X = 0) + \mathbb{P}(X = 1)$
-			
+
 			Sabemos de la función de densidad de la distribución Poisson:
-			
+
 			$\mathbb{P}(X = 0) = e^{-\lambda} \frac{\lambda^{0}}{0!}$
-			
+
 			$\mathbb{P}(X = 1) = e^{-\lambda} \frac{\lambda^{1}}{1!}$
 
 			$\mathbb{P}(X = 2) = e^{-\lambda} \frac{\lambda^{2}}{2!}$
-			
+
 			Entonces:
-			
+
 			$e^{-\lambda} \frac{\lambda^{0}}{0!} + e^{-\lambda} \frac{\lambda^{1}}{1!} = 2 e^{-\lambda} \frac{\lambda^{2}}{2!}$
-			
+
 			$e^{-\lambda}  + e^{-\lambda} \lambda =  e^{-\lambda} \lambda^{2}$
-			
+
 			$e^{-\lambda} (1 + \lambda) =  e^{-\lambda} \lambda^{2}$
-			
+
 			 $\lambda^{2} - \lambda - 1 = 0$
-			 
+
 			 Aplicando la ecuación de segundo grado, obtenemos:
-			 
+
 			 $\lambda = \frac{1 \pm \sqrt{5}}{2}$
-			 
+
 			 Por lo tanto, $ \mathbb{E}(X) = \frac{1 \pm \sqrt{5}}{2}$\\
-			
+
 		}
 
 		%18
 		\item{
 			Si $X$ es una variable aleatoria con distribución Poisson tal que
 			$\mathbb{P}(X = 0) = \mathbb{P}(X = 1)$, encuentre $\mathbb{E}(X)$.
-				
+
 			Sabemos que $\mathbb{E}(X)$ de una distribución Poisson es $\lambda$
-			
+
 			Así que resolvamos: $\mathbb{P}(X = 0) = \mathbb{P}(X = 1)$
-			
+
 			Sabemos de la función de densidad de la distribución Poisson:
-			
+
 			$\mathbb{P}(X = 0) = e^{-\lambda} \frac{\lambda^{0}}{0!}$
-			
+
 			$\mathbb{P}(X = 1) = e^{-\lambda} \frac{\lambda^{1}}{1!}$
 
-			
+
 			Entonces:
-			
+
 			$e^{-\lambda} \frac{\lambda^{0}}{0!} = e^{-\lambda} \frac{\lambda^{1}}{1!}$
-			
+
 			$e^{-\lambda}  =  e^{-\lambda} \lambda$
-			
+
 			$1 - \lambda =  0$
-						
+
 			$\lambda = 1$
-		
+
 			Por lo tanto, $ \mathbb{E}(X) = 1$\\
 		}
 
@@ -562,19 +778,19 @@
 			componente de reemplazo del mismo tipo que se sustituye por el
 			primero cuando falla. ¿Cuál es la media del tiempo total hasta la
 			falla de ambos componentes?
-			
+
 			Sean $X_{1}, X_{2}$ los dos componentes, sabemos que $X_{1} \sim \text{Exp}(\lambda)$, $X_{2} \sim \text{Exp}(\lambda)$  y que $\lambda = \frac{1}{24}$
-			
-			Y tenemos que calcular $\mathbb{E}(X_{1} + X_{2})$ 
-			
+
+			Y tenemos que calcular $\mathbb{E}(X_{1} + X_{2})$
+
 			Sabemos que si $\{X_i\}_{i=1}^{n}$ con $X_{i} \sim \text{Exp}(\lambda)$ entonces $\sum_{i=1}^{n}  X_{i} \sim \text{Gama}(r, \lambda) $
-			
+
 			Así que de lo anterior, podemos decir que  $\mathbb{E}(X_{1} + X_{2}) = \mathbb{E}(Y)$ donde $Y \sim \text{Gama}(2, \frac{1}{24})$
-			
+
 			La esperanza de una distribución Gama es $\frac{r}{\lambda}$
-			
+
 			Entonces $\mathbb{E}(X_{1} + X_{2}) = \mathbb{E}(Y) = \frac{2}{\frac{1}{24}} = 48$
-			
+
 			Por lo tanto, la media del tiempo total hasta la
 			falla de ambos componentes es 48.\\
 		}
@@ -587,51 +803,51 @@
 				%a
 				\item {
 					$\mathbb{E}(X)$
-					
+
 					Utilizando la propiedad de la exponencial $\mathbb{E}(X + Y) = \mathbb{E}(X) + \mathbb{E}(Y)$:
-					
+
 					$\mathbb{E}(a+(b - a)U) = \mathbb{E}(a) + \mathbb{E}((b - a)U)$\\
-					
+
 					Utilizando la propiedad de la exponencial $\mathbb{E}(c) = c$:
-					
+
 					$\mathbb{E}(a+(b - a)U) = a + \mathbb{E}((b - a)U)$\\
-					
+
 					Utilizando la propiedad de la exponencial $\mathbb{E}(cx) = c\mathbb{E}(X)$:
-					
+
 					$\mathbb{E}(a+(b - a)U) = a + (b - a)\mathbb{E}(U)$\\
-					
+
 					$\mathbb{E}(U) = \frac{\beta + \alpha}{2} = \frac{1+0}{2}$
-					
+
 					Entonces:
-					
+
 					$\mathbb{E}(a+(b - a)U) = a + (b - a)\frac{1}{2} = \frac{1}{2}(a+b)$\\
 
-					
+
 					Por lo tanto, $\mathbb{E}(X) = \frac{a+b}{2}$\\
-						
-					
+
+
 				}
 
 				%b
 				\item {
 					$\text{Var}(X)$
-					
+
 					Utilizando la propiedad de la varianza $\text{Var}(X + c) = \text{Var}(X)$:
-					
+
 					$\text{Var}(a+(b - a)U) = \text{Var}((b - a)U)$\\
-					
+
 					Utilizando la propiedad de la varianza $\text{Var}(cX) = c^2\text{Var}(X)$:
-					
+
 					$\text{Var}(a+(b - a)U) = (b - a)^2 \text{Var}(U)$\\
-					
-									
+
+
 					$\text{Var}(U) = \frac{(\beta - \alpha)^2}{12} = \frac{(1-0)^2}{12}$
-					
+
 					Entonces:
-					
+
 					$\text{Var}(a+(b - a)U) = (b - a)^2\frac{1}{12}$ \\
 
-					
+
 					Por lo tanto, $\text{Var}(X) = \frac{(b - a)^2}{12}$ \\
 				}
 			\end{enumerate}
