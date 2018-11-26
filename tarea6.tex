@@ -290,6 +290,27 @@
                     simétrica con respecto a $x = \mu$, alcanza su máximo en
                     $x = \mu$ y tiene puntos de inflexión en $x_1= \mu + \sigma$
                     y $x_2 = \mu - \sigma$.\\
+		    \item {
+					Demuestre que la función de densidad $N(\mu, \sigma^2)$ es
+                    simétrica con respecto a $x = \mu$, alcanza su máximo en
+                    $x = \mu$ y tiene puntos de inflexión en $x_1= \mu + \sigma$
+                    y $x_2 = \mu - \sigma$.\\
+                    
+                    Para que el funcion sea simetrica se quiere demostrar que f($\mu - x$) = f($\mu + x$). Pero se puede demostrar que:
+                    \[\frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{(\mu - x - \mu)^2}{2\sigma^2}} = \frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{(\mu + x - \mu)^2}{2\sigma^2}}\]
+                    \[ \frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{(- x)^2}{2\sigma^2}} = \frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{(x)^2}{2\sigma^2}}\]
+                     \[ \frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{x^2}{2\sigma^2}} = \frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{x^2}{2\sigma^2}}\]
+                     Que se puede notar que obviamente son iguales, entonces es simetrica. Sabemos que $\mu$ es el maximo ya que cuando x tiene cualquier valor diferente de $\mu$:
+                     \[-\frac{(x - \mu)^2}{2\sigma^2} \neq 0\]
+                     Y como cuando $x = \mu$ resulta en que la funcion es igual a:
+                     \[\frac{1}{\sigma\sqrt{2\pi}}\]
+                     Esto es el maximo valor que puede tomar la funcion, entonces tiene un maximo en $x = \mu$.
+                     \\ Cuando x_1 = $\mu - \sigma$ y $x_2 = \mu + \sigma$, se puede notar que:
+                     \[\frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{(\mu - \sigma - \mu)^2}{2\sigma^2}} = \frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{(\mu + \sigma - \mu)^2}{2\sigma^2}}\]
+                     \[ \frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{(- \sigma)^2}{2\sigma^2}} = \frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{(\sigma)^2}{2\sigma^2}}\]
+                     Entonces por definicion de punto de inflexion, si uno es  punto de inflexion, el otro lo es tambien. De donde la segunda derivada de f(x) es:
+                     \[\sigma\frac{(2x^2-4\mu x + 2\mu^2 + 1)e^{(x-\mu)^2}}{\sqrt{2\pi}}\]
+                     Donde solo es igual a 0 cuando $x = \mu - \sigma$. Por definicion de punto de inflexion, tambien cuando $x= \mu + \sigma$.
 				}
 
 				%b
