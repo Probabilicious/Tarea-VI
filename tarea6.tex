@@ -216,11 +216,11 @@
             los  artículos escogidos haya por lo menos un artículo que no tenga
             marcada la cave de su precio.
             \\
-            Usamos la distribución hipergeométrica. Tenemos entonces que ésta está dada por:
+             Usamos la distribución hipergeométrica. Tenemos entonces que ésta está dada por:
             $$p(i)=\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}}$$
             Y se tiene que en éste caso N=400,n=10,m=6,i=1. Entonces se sigue que:
-
-            $$p(1)=\frac{\binom{6}{1}\binom{400-6}{10-1}}{\binom{400}{10}}\approx 0.1337 $$
+            
+            $$P(X\geq 1)=1-P(X<1)=1-\frac{\binom{6}{0}\binom{400-6}{10}}{\binom{400}{10}}\approx .14$$
 		}
 
 		%7
