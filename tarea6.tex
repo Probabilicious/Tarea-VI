@@ -306,6 +306,15 @@
                     simétrica con respecto a $x = \mu$, alcanza su máximo en
                     $x = \mu$ y tiene puntos de inflexión en $x_1= \mu + \sigma$
                     y $x_2 = \mu - \sigma$.\\
+		    
+		    Tenemos que la función de densidad de una variable aleatoria con distribución normal está dada por:
+                    $$f_X (x) = \frac{e^{\frac{-(x-\mu)^2}{2 Var(X)}{ }}}{\sqrt{2\pi Var(X)}}$$ Entonces se sigue que 
+                    $$f_X (x+\mu)=\frac{e^{\frac{-(x+\mu-\mu)^2}{2 Var(X)}{2 }}}{\sqrt{2\pi Var(X)}}=\frac{e^{\frac{-(x)^2}{2Var(X)}}}{\sqrt{2\pi Var(X)}}=\frac{e^{\frac{-(-x)^2}{2Var(X)}}}{\sqrt{2\pi Var(X)}}=f_X (-x+\mu)_{\blacktriangle}$$ 
+                    Además tenemos que:\\
+                    $$f'_X (x)= (\frac{1}{\sqrt{2\pi Var(X)}})e^{\frac{-(x-\mu)^2}{2Var(X)}}(-\frac{2}{2Var(X)}(x-\mu))$$
+                    Y como $\mu \neq 0$ siempre y $e^{k}\neq 0 \ \forall k$ se sigue que $f'_X (x)=0 \Leftrightarrow x=\mu$. Ahora tenemos que $$f''_X (x)=(-\frac{e^{\frac{-(x-\mu)^2}{2Var(X)}}}{\sqrt{2 \pi Var(X)}})(-\frac{(x-\mu)^2}{Var(X)}+1)$$ y esto es cero solamente cuando:
+                    $$\frac{(x-\mu)^2}{Var(X)}-1=0$$ Resolviendo la ecuación cuadrática:
+                    $$x^2-2\mu x +(\mu^2-Var(X))=0 \Leftrightarrow x_{1,2}=\frac{2\mu \pm \sqrt{4\mu^2-4(u^2-Var(X))} }{2}$$ $$\Leftrightarrow x_{1,2}=\mu \pm \sqrt{Var(X)}$$
 				}
 
 				%b
